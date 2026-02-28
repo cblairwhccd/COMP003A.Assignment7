@@ -28,25 +28,43 @@ class Program
         return result;
     }
 
-    static void Main()
+    /* Show menu options */
+    static void DisplayMenu()
     {
-        int[] scores = {85, 90, 78, 92, 88};
         string[] menu = {"Display Values", "Show Total", "Show Average", "Exit"};
         for (int i = 0; i < menu.Length; i++)
         {
             Console.WriteLine($"{1+i}. {menu[i]}");
         }
+    }
+
+    /* Display all scores */
+    static void DisplayValues(int[] scores)
+    {
+    }
+
+    /* Calculate total score and print */
+    static void ShowTotal(int[] scores)
+    {
+    }
+
+    /* Calculate average score and print */
+    static void ShowAverage(int[] scores)
+    {
+    }
+
+    static void Main()
+    {
+        int[] scores = {85, 90, 78, 92, 88};
+        DisplayMenu();
         int choice;
         while ((choice = Prompt("Enter choice: ", 1, 4)) != 4)
         {
             switch (choice)
             {
-                case 1: /* Display Values */
-                    break;
-                case 2: /* Show Total */
-                    break;
-                case 3: /* Show Average */
-                    break;
+                case 1: DisplayValues(scores); break;
+                case 2: ShowTotal(scores); break;
+                case 3: ShowAverage(scores); break;
             }
         }
     }
