@@ -56,6 +56,13 @@ class Program
     /* Calculate average score and print */
     static void ShowAverage(int[] scores)
     {
+        int total = 0;
+        foreach (int score in scores)
+        {
+            total += score;
+        }
+        double average = total / scores.Length;
+        Console.WriteLine($"Average: {average}");
     }
 
     static void Main()
