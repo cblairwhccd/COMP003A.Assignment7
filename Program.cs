@@ -2,28 +2,18 @@
 
 class Program
 {
-    /* Prompt for integer within min/max range */
-    static int Prompt(string prompt, int min, int max)
+    /* Prompt for integer */
+    static int Prompt(string prompt)
     {
         int result;
-        while (true)
+        Console.Write(prompt);
+        try
         {
-            Console.Write(prompt);
-            try
-            {
-                result = int.Parse(Console.ReadLine());
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Invalid selection.");
-                continue;
-            }
-            if (result < min || result > max)
-            {
-                Console.WriteLine("Selection out of range.");
-                continue;
-            }
-            break;
+            result = int.Parse(Console.ReadLine());
+        }
+        catch (FormatException)
+        {
+            result = -1;
         }
         return result;
     }
@@ -48,6 +38,7 @@ class Program
         }
     }
 
+    /* Calculate total score */
     static int CaclulateTotal(int[] scores)
     {
         int total = 0;
@@ -55,7 +46,6 @@ class Program
         {
             total += score;
         }
-
         return total;
     }
 
@@ -83,8 +73,13 @@ class Program
         int[] scores = {85, 90, 78, 92, 88};
         DisplayMenu();
         int choice;
-        while ((choice = Prompt("Enter choice: ", 1, 4)) != 4)
+        while ((choice = Prompt("Enter choice: ")) != 4)
         {
+            if (choice < 1 || choice > 4)
+            {
+                Console.WriteLine("Invalid selection.");
+                continue;
+            }
             switch (choice)
             {
                 case 1: DisplayValues(scores); break;
