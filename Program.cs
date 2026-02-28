@@ -51,6 +51,12 @@ class Program
     /* Calculate total score and print */
     static void ShowTotal(int[] scores)
     {
+        int total = 0;
+        foreach (int score in scores)
+        {
+            total += score;
+        }
+        Console.WriteLine($"Total: {total}");
     }
 
     /* Calculate average score and print */
