@@ -41,6 +41,11 @@ class Program
     /* Display all scores */
     static void DisplayValues(int[] scores)
     {
+        Console.WriteLine("\nValues:");
+        foreach (int score in scores)
+        {
+            Console.WriteLine(score);
+        }
     }
 
     /* Calculate total score and print */
@@ -66,6 +71,7 @@ class Program
                 case 2: ShowTotal(scores); break;
                 case 3: ShowAverage(scores); break;
             }
+            Console.WriteLine();
         }
     }
 }
