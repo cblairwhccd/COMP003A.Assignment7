@@ -61,7 +61,8 @@ class Program
         {
             total += score;
         }
-        double average = total / scores.Length;
+        /* BUGFIX: Must cast to double before division, or it will do integer division. */
+        double average = (double)total / scores.Length;
         Console.WriteLine($"Average: {average}");
     }
 
