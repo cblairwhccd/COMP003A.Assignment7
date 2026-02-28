@@ -71,12 +71,15 @@ class Program
     {
         int total = CaclulateTotal(scores);
         /* BUGFIX: Must cast to double before division, or it will do integer division. */
+        /* Previous result: 86; Correct result: 86.6 */
         double average = (double)total / scores.Length;
         Console.WriteLine($"Average: {average}");
     }
 
+    /* Display individual scores, total score and average score from score data */
     static void Main()
     {
+        /* Score data */
         int[] scores = {85, 90, 78, 92, 88};
         DisplayMenu();
         int choice;
